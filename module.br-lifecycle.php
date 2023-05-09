@@ -90,72 +90,72 @@ if (!class_exists('LifeCycleManagementInstaller')) {
                         array(
                             'name' => '00 - Outdated',
                             'description' => 'EoL / EoSL passed',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND (m.eol < NOW() OR m.eosl < NOW())",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '01 - EoL outdated',
                             'description' => 'End of life passed',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eol < NOW()",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '01 - EoSL outdated',
                             'description' => 'End of service life passed',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eosl < NOW()",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '02 - EoL in 30 days',
                             'description' => 'End of life in less than 30 days',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eol > NOW() AND m.eol < DATE_ADD(NOW(), INTERVAL 30 DAY)",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '02 - EoSL in 30 days',
                             'description' => 'End of service life in less than 30 days',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eosl > NOW() AND m.eosl < DATE_ADD(NOW(), INTERVAL 30 DAY)",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '03 - EoL this year',
                             'description' => 'End of life this year',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eol > DATE_FORMAT(NOW(),'%Y-01-01 00:00:00') AND m.eol < DATE_FORMAT(NOW(),'%Y-12-31 23:59:59')",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '03 - EoSL this year',
                             'description' => 'End of service life this year',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eosl > DATE_FORMAT(NOW(),'%Y-01-01 00:00:00') AND m.eosl < DATE_FORMAT(NOW(),'%Y-12-31 23:59:59')",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '04 - EoL next year',
                             'description' => 'End of life next year',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eol > DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 YEAR),'%Y-01-01 00:00:00') AND m.eol < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 YEAR),'%Y-12-31 23:59:59')",
                             'valid_flag' => 'false',
                         ),
                         array(
                             'name' => '04 - EoSL next year',
                             'description' => 'End of service life next year',
-                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\f" .
-                                "WHERE pd.status='production' AND pd.model_id != 0\f" .
+                            'query' =>  "SELECT pd,m FROM PhysicalDevice AS pd JOIN Model AS m ON pd.model_id = m.id\n" .
+                                "WHERE pd.status='production' AND pd.model_id != 0\n" .
                                 "AND m.eosl > DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 YEAR),'%Y-01-01 00:00:00') AND m.eosl < DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 YEAR),'%Y-12-31 23:59:59')",
                             'valid_flag' => 'false',
                         ),
