@@ -20,4 +20,14 @@ Life Cycle Management of Devices, Brands, OS, etc.
 * End Of Life (EoL)
 * End Of Service Life (EoSL)
 
+### Audit rules
+
+Adds audit rules for lifecycle management:
+
+* Physical Devices
+  * EoL/EoSL passed
+  * EoL/EoSL within 30 days
+  * EoL/EoSL this year
+  * EoL/EoSL next year
+
 ## Attribution
