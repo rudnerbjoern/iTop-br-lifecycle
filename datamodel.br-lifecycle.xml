@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.7">
+    <!--
+    * @license     https://www.gnu.org/licenses/gpl-3.0.en.html
+    -->
+    <classes>
+        <class id="Model" _delta="must_exist">
+            <fields>
+                <!-- End Of Life (EoL) -->
+                <field id="eol" xsi:type="AttributeDate" _delta="define">
+                    <sql>eol</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+                <!-- End Of Service Life (EoSL) -->
+                <field id="eosl" xsi:type="AttributeDate" _delta="define">
+                    <sql>eosl</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="fieldset:Server:Date" _delta="define">
+                            <rank>100</rank>
+                            <items>
+                                <item id="eol">
+                                    <rank>10</rank>
+                                </item>
+                                <item id="eosl">
+                                    <rank>20</rank>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <!-- not working as expected
+        <class id="PhysicalDevice" _delta="must_exist">
+            <field id="model_eol" xsi:type="AttributeExternalField" _delta="define">
+                <extkey_attcode>model_id</extkey_attcode>
+                <target_attcode>eol</target_attcode>
+            </field>
+            <field id="model_esol" xsi:type="AttributeExternalField" _delta="define">
+                <extkey_attcode>model_id</extkey_attcode>
+                <target_attcode>esol</target_attcode>
+            </field>
+        </class>
+        -->
+        <class id="OSVersion" _delta="must_exist">
+            <fields>
+                <!-- End of Mainstream Support (EoMSS) -->
+                <field id="eomss" xsi:type="AttributeDate" _delta="define">
+                    <sql>eomss</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+                <!-- End of Extended Support / End of Life (EoL) -->
+                <field id="eol" xsi:type="AttributeDate" _delta="define">
+                    <sql>eol</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+                <!-- End of Extended Security Update (EoESU) -->
+                <field id="eoesu" xsi:type="AttributeDate" _delta="define">
+                    <sql>eoesu</sql>
+                    <default_value />
+                    <is_null_allowed>true</is_null_allowed>
+                </field>
+                <field id="server_list" xsi:type="AttributeLinkedSet" _delta="define">
+                    <linked_class>Server</linked_class>
+                    <ext_key_to_me>osversion_id</ext_key_to_me>
+                    <edit_mode>none</edit_mode>
+                    <count_min>0</count_min>
+                    <count_max>0</count_max>
+                    <duplicates />
+                </field>
+                <field id="virtualmachine_list" xsi:type="AttributeLinkedSet" _delta="define">
+                    <linked_class>VirtualMachine</linked_class>
+                    <ext_key_to_me>osversion_id</ext_key_to_me>
+                    <edit_mode>none</edit_mode>
+                    <count_min>0</count_min>
+                    <count_max>0</count_max>
+                    <duplicates />
+                </field>
+                <field id="pc_list" xsi:type="AttributeLinkedSet" _delta="define">
+                    <linked_class>PC</linked_class>
+                    <ext_key_to_me>osversion_id</ext_key_to_me>
+                    <edit_mode>none</edit_mode>
+                    <count_min>0</count_min>
+                    <count_max>0</count_max>
+                    <duplicates />
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="fieldset:Server:Date" _delta="define">
+                            <rank>50</rank>
+                            <items>
+                                <item id="eomss">
+                                    <rank>10</rank>
+                                </item>
+                                <item id="eol">
+                                    <rank>20</rank>
+                                </item>
+                                <item id="eoesu">
+                                    <rank>30</rank>
+                                </item>
+                            </items>
+                        </item>
+                        <item id="server_list">
+                            <rank>100</rank>
+                        </item>
+                        <item id="virtualmachine_list">
+                            <rank>110</rank>
+                        </item>
+                        <item id="pc_list">
+                            <rank>120</rank>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+    </classes>
+</itop_design>

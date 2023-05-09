@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension format="1.0">
+    <extension_code>
+        <![CDATA[br-lifecycle]]>
+    </extension_code>
+    <company>
+        <![CDATA[]]>
+    </company>
+    <author>
+        <![CDATA[Björn Rudner]]>
+    </author>
+    <label>
+        <![CDATA[Datamodel: Lifecycle Management]]>
+    </label>
+    <description>
+        <![CDATA[Adds the ability to perform lifecycle management.]]>
+    </description>
+    <version>
+        <![CDATA[0.1.0]]>
+    </version>
+    <release_date>
+        <![CDATA[2023-05-09]]>
+    </release_date>
+    <version_description>
+        <![CDATA[]]>
+    </version_description>
+    <itop_version_min>
+        <![CDATA[2.7.5]]>
+    </itop_version_min>
+    <status>stable</status>
+    <mandatory>false</mandatory>
+    <more_info_url>
+        <![CDATA[https://github.com/rudnerbjoern/iTop-br-lifecycle/blob/main/README.md]]>
+    </more_info_url>
+</extension>
