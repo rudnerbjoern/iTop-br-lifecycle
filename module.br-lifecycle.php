@@ -60,7 +60,7 @@ if (!class_exists('LifeCycleManagementInstaller')) {
         {
             // Create audit rules introduced in Version 0.2.0
             if (version_compare($sPreviousVersion, '0.2.0', '<')) {
-                SetupPage::log_info("|- Installing Life Cycle Management from '$sPreviousVersion' to '$sCurrentVersion'. The extension comes with audit rules so corresponding objects will created into the DB...");
+                SetupLog::Info("|- Installing Life Cycle Management from '$sPreviousVersion' to '$sCurrentVersion'. The extension comes with audit rules so corresponding objects will created into the DB...");
 
                 if (MetaModel::IsValidClass('AuditRule')) {
                     // First, create audit category for Physical Device Lifecycle
@@ -77,12 +77,12 @@ if (!class_exists('LifeCycleManagementInstaller')) {
                                     "WHERE pd.status='production' AND pd.model_id != 0",
                             ));
                             $oAuditCategory->DBWrite();
-                            SetupPage::log_info('|  |- AuditCategory "Physical Device Lifecycle" created.');
+                            SetupLog::Info('|  |- AuditCategory "Physical Device Lifecycle" created.');
                         } catch (Exception $oException) {
-                            SetupPage::log_info('|  |- Could not create AuditCategory. (Error: ' . $oException->getMessage() . ')');
+                            SetupLog::Info('|  |- Could not create AuditCategory. (Error: ' . $oException->getMessage() . ')');
                         }
                     } else {
-                        SetupPage::log_info('|  |- AuditCategory "Physical Device Lifecycle" already existing! Weird as it is supposed to be created by this extension, but will use it anyway!');
+                        SetupLog::Info('|  |- AuditCategory "Physical Device Lifecycle" already existing! Weird as it is supposed to be created by this extension, but will use it anyway!');
                     }
 
                     // Then, create audit rules
@@ -165,9 +165,9 @@ if (!class_exists('LifeCycleManagementInstaller')) {
                             $oAuditRule = MetaModel::NewObject('AuditRule', $aAuditRule);
                             $oAuditRule->Set('category_id', $oAuditCategory->GetKey());
                             $oAuditRule->DBWrite();
-                            SetupPage::log_info('|  |- AuditRule "' . $aAuditRule['name'] . '" created.');
+                            SetupLog::Info('|  |- AuditRule "' . $aAuditRule['name'] . '" created.');
                         } catch (Exception $oException) {
-                            SetupPage::log_info('|  |- Could not create AuditRule "' . $aAuditRule['name'] . '". (Error: ' . $oException->getMessage() . ')');
+                            SetupLog::Info('|  |- Could not create AuditRule "' . $aAuditRule['name'] . '". (Error: ' . $oException->getMessage() . ')');
                         }
                     }
                 }
