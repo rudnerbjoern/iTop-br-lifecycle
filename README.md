@@ -1,6 +1,6 @@
 # iTop-br-lifecycle
 
-Copyright (c) 2023 Björn Rudner
+Copyright (c) 2023-2024 Björn Rudner
 [![License](https://img.shields.io/github/license/rudnerbjoern/iTop-br-lifecycle)](https://github.com/rudnerbjoern/iTop-br-lifecycle/blob/main/LICENSE)
 
 ## What?
@@ -29,5 +29,9 @@ Adds audit rules for lifecycle management:
   * EoL/EoSL within 30 days
   * EoL/EoSL this year
   * EoL/EoSL next year
+
+## iTop Compatibility
+
+The extension was tested on iTop 2.7.11
 
 ## Attribution
