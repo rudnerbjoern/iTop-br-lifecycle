@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright   Copyright (C) 2023 Björn Rudner
+ * @copyright   Copyright (C) 2023-2024 Björn Rudner
  * @license     https://www.gnu.org/licenses/gpl-3.0.en.html
- * @version     2023-05-09
+ * @version     2024-08-27
  *
  * Localized data
  */
 
-Dict::Add('EN US', 'English', 'English', array(
+Dict::Add('DE DE', 'German', 'Deutsch', array(
     'Class:Model/Attribute:eol' => 'End Of Life',
     'Class:Model/Attribute:eol+' => 'End Of Life (EoL)',
     'Class:Model/Attribute:eosl' => 'End Of Service Life',
@@ -20,6 +20,6 @@ Dict::Add('EN US', 'English', 'English', array(
     'Class:OSVersion/Attribute:eoesu' => 'End of Extended Security Update',
     'Class:OSVersion/Attribute:eoesu+' => 'End of Extended Security Update (EoESU)',
     'Class:OSVersion/Attribute:server_list' => 'Servers',
-    'Class:OSVersion/Attribute:virtualmachine_list' => 'Virtual Machines',
+    'Class:OSVersion/Attribute:virtualmachine_list' => 'Virtuelle Maschinen',
     'Class:OSVersion/Attribute:pc_list' => 'PCs',
 ));
