@@ -15,10 +15,18 @@ Life Cycle Management of Devices, Brands, OS, etc.
 * End of Extended Support / End of Life (EoL)
 * End of Extended Security Update (EoESU)
 
+#### Screenshot OS Version
+
+![Lifecycle OS-Version](Screenshots/Lifecycle_OSVersion.png)
+
 ### Class: Model
 
 * End Of Life (EoL)
 * End Of Service Life (EoSL)
+
+#### Screenshot Model
+
+![Lifecycle Model](Screenshots/Lifecycle_Model.png)
 
 ### Audit rules
 
@@ -30,8 +38,18 @@ Adds audit rules for lifecycle management:
   * EoL/EoSL this year
   * EoL/EoSL next year
 
+#### Screenshot Audit Rules
+
+![Lifecycle AuditRules](Screenshots/Lifecycle_AuditRules.png)
+
 ## iTop Compatibility
 
-The extension was tested on iTop 2.7.11 and 3.1.1
+The branch [2.7](https://github.com/rudnerbjoern/iTop-br-lifecycle/tree/itop/2.7) is compatible to iTop 2.7 and iTop 3.1.
+
+The branch [main](https://github.com/rudnerbjoern/iTop-br-lifecycle/tree/main) will only be compatible to iTop 3.1.
+
+Versions starting with 2.7.x are kept compatible to iTop 2.7
+
+The extension was tested on iTop 2.7.10 and 3.1.1
 
 ## Attribution
