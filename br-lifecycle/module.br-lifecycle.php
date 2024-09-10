@@ -20,7 +20,7 @@ SetupWebPage::AddModule(
         // Setup
         //
         'dependencies' => array(
-            'itop-structure/3.0.0'
+            'itop-config-mgmt/3.1.0',
         ),
         'mandatory' => false,
         'visible' => true,
