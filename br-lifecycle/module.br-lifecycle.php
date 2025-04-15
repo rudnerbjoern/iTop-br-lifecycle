@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright   Copyright (C) 2023-2024 Björn Rudner
+ * @copyright   Copyright (C) 2023-2025 Björn Rudner
  * @license     https://www.gnu.org/licenses/gpl-3.0.en.html
- * @version     2024-09-10
+ * @version     2025-04-15
  *
  * iTop module definition file
  */
 
 SetupWebPage::AddModule(
     __FILE__, // Path to the current file, all other file names are relative to the directory containing this file
-    'br-lifecycle/3.1.4',
+    'br-lifecycle/3.2.0',
     array(
         // Identification
         //
