@@ -60,7 +60,7 @@ if (!class_exists('LifeCycleManagementInstaller')) {
         {
             // Create audit rules introduced in Version 0.2.0
             if (version_compare($sPreviousVersion, '0.2.0', '<')) {
-                SetupLog::Info("|- Installing Life Cycle Management from '$sPreviousVersion' to '$sCurrentVersion'. The extension comes with audit rules so corresponding objects will created into the DB...");
+                SetupLog::Info("|- Installing Lifecycle Management from '$sPreviousVersion' to '$sCurrentVersion'. The extension comes with audit rules so corresponding objects will created into the DB...");
 
                 if (MetaModel::IsValidClass('AuditRule')) {
                     // First, create audit category for Physical Device Lifecycle
@@ -168,6 +168,57 @@ if (!class_exists('LifeCycleManagementInstaller')) {
                             SetupLog::Info('|  |- AuditRule "' . $aAuditRule['name'] . '" created.');
                         } catch (Exception $oException) {
                             SetupLog::Info('|  |- Could not create AuditRule "' . $aAuditRule['name'] . '". (Error: ' . $oException->getMessage() . ')');
+                        }
+                    }
+                }
+            }
+
+            // Introduce AuditDomain in Version 3.2.0
+            if (version_compare($sPreviousVersion, '3.2.0', '<')) {
+                SetupLog::Info("|- Installing Lifecycle Management from '$sPreviousVersion' to '$sCurrentVersion'. Updating AuditDomain and lnkAuditCategoryToAuditDomain ...");
+
+                $iAuditDomainId = 0;
+                $iAuditCategoryId = 0;
+
+                if (MetaModel::IsValidClass('AuditDomain')) {
+                    // First, create audit category for Server mismatch
+                    $oSearch = DBObjectSearch::FromOQL('SELECT AuditDomain WHERE name = "Lifecycle Management"');
+                    $oSet = new DBObjectSet($oSearch);
+                    $oAuditDomain = $oSet->Fetch();
+
+                    if ($oAuditDomain === null) {
+                        try {
+                            $oAuditDomain = MetaModel::NewObject('AuditDomain', array(
+                                'name' => 'Lifecycle Management',
+                                'description' => 'Audit Lifecycle Management defined in the CMDB',
+                            ));
+                            $oAuditDomain->DBWrite();
+                            SetupLog::Info('|  |- AuditDomain "Lifecycle Management" created.');
+                        } catch (Exception $oException) {
+                            SetupLog::Info('|  |- Could not create AuditDomain. (Error: ' . $oException->getMessage() . ')');
+                        }
+                    } else {
+                        SetupLog::Info('|  |- AuditDomain "Lifecycle Management" already existing! We will use it!');
+                    }
+
+                    // Link AuditDomain with AuditCategory
+                    $oSearch = DBObjectSearch::FromOQL('SELECT AuditCategory WHERE name = "Physical Device Lifecycle"');
+                    $oSet = new DBObjectSet($oSearch);
+                    $oAuditCategory = $oSet->Fetch();
+
+                    $iAuditDomainId = ($oAuditDomain !== null) ? $oAuditDomain->GetKey() : 0;
+                    $iAuditCategoryId = ($oAuditCategory !== null) ? $oAuditCategory->GetKey() : 0;
+
+                    if ($iAuditDomainId > 0 && $iAuditCategoryId > 0) {
+                        try {
+                            $oAuditLink = MetaModel::NewObject('lnkAuditCategoryToAuditDomain', array(
+                                'domain_id' => $iAuditDomainId,
+                                'category_id' => $iAuditCategoryId,
+                            ));
+                            $oAuditLink->DBWrite();
+                            SetupLog::Info('|  |- AuditLink created.');
+                        } catch (Exception $oException) {
+                            SetupLog::Info('|  |- Could not create AuditLink. (Error: ' . $oException->getMessage() . ')');
                         }
                     }
                 }
