@@ -35,6 +35,16 @@
                         </item>
                     </items>
                 </details>
+                <summary>
+                    <items>
+                        <item id="eol" _delta="define">
+                            <rank>22</rank>
+                        </item>
+                        <item id="eosl" _delta="define">
+                            <rank>24</rank>
+                        </item>
+                    </items>
+                </summary>
             </presentation>
         </class>
         <!-- not working as expected
@@ -111,17 +121,33 @@
                                 </item>
                             </items>
                         </item>
-                        <item id="server_list">
+                        <item id="server_list" _delta="define">
                             <rank>100</rank>
                         </item>
-                        <item id="virtualmachine_list">
+                        <item id="virtualmachine_list" _delta="define">
                             <rank>110</rank>
                         </item>
-                        <item id="pc_list">
+                        <item id="pc_list" _delta="define">
                             <rank>120</rank>
                         </item>
                     </items>
                 </details>
+                <summary>
+                    <items>
+                        <item id="osfamily_id" _delta="define">
+                            <rank>10</rank>
+                        </item>
+                        <item id="eomss" _delta="define">
+                            <rank>20</rank>
+                        </item>
+                        <item id="eol" _delta="define">
+                            <rank>30</rank>
+                        </item>
+                        <item id="eoesu" _delta="define">
+                            <rank>40</rank>
+                        </item>
+                    </items>
+                </summary>
             </presentation>
         </class>
     </classes>
