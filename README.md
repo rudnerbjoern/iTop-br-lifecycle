@@ -1,6 +1,6 @@
 # iTop-br-lifecycle
 
-Copyright (c) 2023-2024 Björn Rudner
+Copyright (c) 2023-2025 Björn Rudner
 [![License](https://img.shields.io/github/license/rudnerbjoern/iTop-br-lifecycle)](https://github.com/rudnerbjoern/iTop-br-lifecycle/blob/main/LICENSE)
 
 ## What?
@@ -37,6 +37,21 @@ Adds audit rules for lifecycle management:
   * EoL/EoSL within 30 days
   * EoL/EoSL this year
   * EoL/EoSL next year
+* Servers
+  * EoMSS/EoL/EoESU passed
+  * EoMSS/EoL/EoESU within 30 days
+  * EoMSS/EoL/EoESU this year
+  * EoMSS/EoL/EoESU next year
+* Virtual Machines
+  * EoMSS/EoL/EoESU passed
+  * EoMSS/EoL/EoESU within 30 days
+  * EoMSS/EoL/EoESU this year
+  * EoMSS/EoL/EoESU next year
+* PCs
+  * EoMSS/EoL/EoESU passed
+  * EoMSS/EoL/EoESU within 30 days
+  * EoMSS/EoL/EoESU this year
+  * EoMSS/EoL/EoESU next year
 
 #### Screenshot Audit Rules
 
