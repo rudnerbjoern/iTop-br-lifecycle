@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1">
+<?xml-model href="https://raw.githubusercontent.com/rudnerbjoern/iTop-schema/refs/heads/main/datamodel.v3.2.xsd"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2">
     <!--
     * @license     https://www.gnu.org/licenses/gpl-3.0.en.html
     -->
@@ -85,7 +86,6 @@
                     <edit_mode>none</edit_mode>
                     <count_min>0</count_min>
                     <count_max>0</count_max>
-                    <duplicates />
                 </field>
                 <field id="virtualmachine_list" xsi:type="AttributeLinkedSet" _delta="define">
                     <linked_class>VirtualMachine</linked_class>
@@ -93,7 +93,6 @@
                     <edit_mode>none</edit_mode>
                     <count_min>0</count_min>
                     <count_max>0</count_max>
-                    <duplicates />
                 </field>
                 <field id="pc_list" xsi:type="AttributeLinkedSet" _delta="define">
                     <linked_class>PC</linked_class>
@@ -101,7 +100,6 @@
                     <edit_mode>none</edit_mode>
                     <count_min>0</count_min>
                     <count_max>0</count_max>
-                    <duplicates />
                 </field>
             </fields>
             <presentation>
