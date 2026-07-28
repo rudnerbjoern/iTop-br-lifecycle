@@ -1,6 +1,6 @@
 # iTop-br-lifecycle
 
-Copyright (c) 2023-2025 Björn Rudner
+Copyright (c) 2023-2026 Björn Rudner
 [![License](https://img.shields.io/github/license/rudnerbjoern/iTop-br-lifecycle)](https://github.com/rudnerbjoern/iTop-br-lifecycle/blob/main/LICENSE)
 
 ## What?
@@ -66,5 +66,9 @@ The branch [main](https://github.com/rudnerbjoern/iTop-br-lifecycle/tree/main) w
 Versions starting with 2.7.x are kept compatible to iTop 2.7
 
 The extension was tested on iTop 2.7.10 and 3.2.1
+
+## Translations
+
+Special thanks to [Konstantin Nikulin](https://github.com/apollo2k4) for providing the Russian translation.
 
 ## Attribution

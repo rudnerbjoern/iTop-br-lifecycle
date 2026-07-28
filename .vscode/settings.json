@@ -11,6 +11,7 @@
         "mgmt",
         "osfamily",
         "osversion",
+        "Rudner",
         "virtualmachine"
     ],
     "editor.formatOnSave": true,
