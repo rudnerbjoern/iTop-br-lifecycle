@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension format="1.0">
+<extension format="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://rudnerbjoern.github.io/iTop-schema/extension.xsd">
     <extension_code>
         <![CDATA[br-lifecycle]]>
     </extension_code>
@@ -18,9 +18,7 @@
     <version>
         <![CDATA[3.2.2]]>
     </version>
-    <release_date>
-        <![CDATA[2026-07-28]]>
-    </release_date>
+    <release_date><![CDATA[2026-07-28]]></release_date>
     <version_description>
         <![CDATA[]]>
     </version_description>
