@@ -5,8 +5,8 @@ declare(strict_types=1);
 $schemaDirectory = getenv('ITOP_SCHEMA_DIR') ?: __DIR__ . '/../.tmp/schemas';
 $documents = [
     'extension manifest matches its XSD' => ['extension.xml', 'extension.xsd'],
-    'Lifecycle data model matches the iTop 3.2 XSD' => [
-        'br-lifecycle/datamodel.br-lifecycle.xml', '3.2/itop_design.xsd',
+    'Lifecycle data model matches the iTop 3.3 XSD' => [
+        'br-lifecycle/datamodel.br-lifecycle.xml', '3.3/itop_design.xsd',
     ],
 ];
 

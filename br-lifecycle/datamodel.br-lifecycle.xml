@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<itop_design version="3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://rudnerbjoern.github.io/iTop-schema/3.2/itop_design.xsd">
+<itop_design version="3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://rudnerbjoern.github.io/iTop-schema/3.3/itop_design.xsd">
     <!--
     * @license     https://www.gnu.org/licenses/gpl-3.0.en.html
     -->
@@ -22,43 +22,429 @@
             <presentation>
                 <details>
                     <items>
-                        <item id="fieldset:Server:Date" _delta="define">
-                            <rank>100</rank>
-                            <items>
-                                <item id="eol">
-                                    <rank>10</rank>
-                                </item>
-                                <item id="eosl">
-                                    <rank>20</rank>
-                                </item>
-                            </items>
+                        <item id="eol" _delta="define">
+                            <rank>26</rank>
                         </item>
                     </items>
                 </details>
+                <search>
+                    <items>
+                        <item id="eol" _delta="define">
+                            <rank>41</rank>
+                        </item>
+                    </items>
+                </search>
+                <default_search>
+                    <items>
+                        <item id="eol" _delta="define">
+                            <rank>41</rank>
+                        </item>
+                    </items>
+                </default_search>
                 <summary>
                     <items>
                         <item id="eol" _delta="define">
                             <rank>22</rank>
                         </item>
-                        <item id="eosl" _delta="define">
-                            <rank>24</rank>
-                        </item>
                     </items>
                 </summary>
             </presentation>
         </class>
-        <!-- not working as expected
         <class id="PhysicalDevice" _delta="must_exist">
-            <field id="model_eol" xsi:type="AttributeExternalField" _delta="define">
-                <extkey_attcode>model_id</extkey_attcode>
-                <target_attcode>eol</target_attcode>
-            </field>
-            <field id="model_esol" xsi:type="AttributeExternalField" _delta="define">
-                <extkey_attcode>model_id</extkey_attcode>
-                <target_attcode>esol</target_attcode>
-            </field>
+            <fields>
+                <field id="model_eol" xsi:type="AttributeExternalField" _delta="define">
+                    <extkey_attcode>model_id</extkey_attcode>
+                    <target_attcode>eol</target_attcode>
+                </field>
+            </fields>
         </class>
-        -->
+        <class id="NetworkDevice" _delta="must_exist">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:Server:Date" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Server" _delta="must_exist">
+            <fields>
+                <field id="os_eol" xsi:type="AttributeExternalField" _delta="define">
+                    <extkey_attcode>osversion_id</extkey_attcode>
+                    <target_attcode>eol</target_attcode>
+                </field>
+                <field id="os_eoesu" xsi:type="AttributeExternalField" _delta="define">
+                    <extkey_attcode>osversion_id</extkey_attcode>
+                    <target_attcode>eoesu</target_attcode>
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:Server:Date" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                        <item id="os_eol" _delta="define">
+                                            <rank>51</rank>
+                                        </item>
+                                        <item id="os_eoesu" _delta="define">
+                                            <rank>52</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Rack" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Enclosure" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="PowerSource" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="PDU" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Phone" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="MobilePhone" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="IPPhone" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Tablet" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="PC" _delta="if_exists">
+            <fields>
+                <field id="os_eol" xsi:type="AttributeExternalField" _delta="define">
+                    <extkey_attcode>osversion_id</extkey_attcode>
+                    <target_attcode>eol</target_attcode>
+                </field>
+                <field id="os_eoesu" xsi:type="AttributeExternalField" _delta="define">
+                    <extkey_attcode>osversion_id</extkey_attcode>
+                    <target_attcode>eoesu</target_attcode>
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                        <item id="os_eol" _delta="define">
+                                            <rank>51</rank>
+                                        </item>
+                                        <item id="os_eoesu" _delta="define">
+                                            <rank>52</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Printer" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="Peripheral" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="StorageSystem" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="SANSwitch" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="TapeLibrary" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="NAS" _delta="if_exists">
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:Server:Date" _delta="must_exist">
+                                    <items>
+                                        <item id="model_eol" _delta="define">
+                                            <rank>41</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
+        <class id="VirtualMachine" _delta="if_exists">
+            <fields>
+                <field id="os_eol" xsi:type="AttributeExternalField" _delta="define">
+                    <extkey_attcode>osversion_id</extkey_attcode>
+                    <target_attcode>eol</target_attcode>
+                </field>
+                <field id="os_eoesu" xsi:type="AttributeExternalField" _delta="define">
+                    <extkey_attcode>osversion_id</extkey_attcode>
+                    <target_attcode>eoesu</target_attcode>
+                </field>
+            </fields>
+            <presentation>
+                <details>
+                    <items>
+                        <item id="col:col2" _delta="must_exist">
+                            <items>
+                                <item id="fieldset:ConfigMgmt:dates" _delta="must_exist">
+                                    <items>
+                                        <item id="os_eol" _delta="define">
+                                            <rank>21</rank>
+                                        </item>
+                                        <item id="os_eoesu" _delta="define">
+                                            <rank>22</rank>
+                                        </item>
+                                    </items>
+                                </item>
+                            </items>
+                        </item>
+                    </items>
+                </details>
+            </presentation>
+        </class>
         <class id="OSVersion" _delta="must_exist">
             <fields>
                 <!-- End of Mainstream Support (EoMSS) -->
@@ -79,62 +465,47 @@
                     <default_value />
                     <is_null_allowed>true</is_null_allowed>
                 </field>
-                <field id="server_list" xsi:type="AttributeLinkedSet" _delta="define">
-                    <linked_class>Server</linked_class>
-                    <ext_key_to_me>osversion_id</ext_key_to_me>
-                    <edit_mode>none</edit_mode>
-                    <count_min>0</count_min>
-                    <count_max>0</count_max>
-                </field>
-                <field id="virtualmachine_list" xsi:type="AttributeLinkedSet" _delta="define">
-                    <linked_class>VirtualMachine</linked_class>
-                    <ext_key_to_me>osversion_id</ext_key_to_me>
-                    <edit_mode>none</edit_mode>
-                    <count_min>0</count_min>
-                    <count_max>0</count_max>
-                </field>
-                <field id="pc_list" xsi:type="AttributeLinkedSet" _delta="define">
-                    <linked_class>PC</linked_class>
-                    <ext_key_to_me>osversion_id</ext_key_to_me>
-                    <edit_mode>none</edit_mode>
-                    <count_min>0</count_min>
-                    <count_max>0</count_max>
-                </field>
             </fields>
             <presentation>
                 <details>
                     <items>
-                        <item id="fieldset:Server:Date" _delta="define">
-                            <rank>50</rank>
-                            <items>
-                                <item id="eomss">
-                                    <rank>10</rank>
-                                </item>
-                                <item id="eol">
-                                    <rank>20</rank>
-                                </item>
-                                <item id="eoesu">
-                                    <rank>30</rank>
-                                </item>
-                            </items>
+                        <item id="eol" _delta="define">
+                            <rank>31</rank>
                         </item>
-                        <item id="server_list" _delta="define">
-                            <rank>100</rank>
-                        </item>
-                        <item id="virtualmachine_list" _delta="define">
-                            <rank>110</rank>
-                        </item>
-                        <item id="pc_list" _delta="define">
-                            <rank>120</rank>
+                        <item id="eoesu" _delta="define">
+                            <rank>32</rank>
                         </item>
                     </items>
                 </details>
+                <search>
+                    <items>
+                        <item id="end_of_support" _delta="define">
+                            <rank>30</rank>
+                        </item>
+                        <item id="eol" _delta="define">
+                            <rank>31</rank>
+                        </item>
+                        <item id="eoesu" _delta="define">
+                            <rank>32</rank>
+                        </item>
+                    </items>
+                </search>
+                <default_search>
+                    <items>
+                        <item id="eol" _delta="define">
+                            <rank>31</rank>
+                        </item>
+                        <item id="eoesu" _delta="define">
+                            <rank>32</rank>
+                        </item>
+                    </items>
+                </default_search>
                 <summary>
                     <items>
                         <item id="osfamily_id" _delta="define">
                             <rank>10</rank>
                         </item>
-                        <item id="eomss" _delta="define">
+                        <item id="end_of_support" _delta="define">
                             <rank>20</rank>
                         </item>
                         <item id="eol" _delta="define">

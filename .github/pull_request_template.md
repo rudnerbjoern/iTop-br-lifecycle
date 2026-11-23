@@ -24,7 +24,7 @@ Please confirm the following (or remove if not applicable):
 - [ ] All new fields and classes are documented
 - [ ] No unintended changes to existing behavior
 - [ ] Changes are tested (manually or automatically)
-- [ ] Compatible with existing iTop installations
+- [ ] Compatible with the minimum supported iTop version (3.3.0)
 
 ## :test_tube: Test Instructions
 <!-- If applicable, describe how to test the changes -->

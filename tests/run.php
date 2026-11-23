@@ -6,6 +6,7 @@ declare(strict_types=1);
 try {
     $tests = require __DIR__ . '/lifecycle.php';
     $tests = array_merge($tests, require __DIR__ . '/installer.php');
+    $tests = array_merge($tests, require __DIR__ . '/osversion-devices.php');
     $tests = array_merge($tests, require __DIR__ . '/schemas.php');
     $tests = array_merge($tests, require __DIR__ . '/prepare-release.php');
     if (!is_array($tests) || $tests === []) {

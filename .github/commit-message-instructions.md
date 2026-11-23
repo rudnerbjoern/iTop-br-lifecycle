@@ -1,6 +1,6 @@
 # Commit-message generation
 
-Generate a message only for the staged change in this iTop 3.2 lifecycle extension project.
+Generate a message only for the staged change in this iTop 3.3 lifecycle extension project.
 Use English and this header:
 
 ```text
