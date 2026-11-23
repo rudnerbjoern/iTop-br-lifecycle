@@ -15,13 +15,13 @@
     <description>
         <![CDATA[Adds the ability to perform lifecycle management.]]>
     </description>
-    <version><![CDATA[3.2.3]]></version>
+    <version><![CDATA[3.3.0]]></version>
     <release_date><![CDATA[2026-11-06]]></release_date>
     <version_description>
-        <![CDATA[]]>
+        <![CDATA[Requires iTop 3.3.0 or later. Setup migrates Model.eosl and OSVersion.eomss to the native end_of_support fields when empty and updates matching lifecycle audit rules. OSVersion.end_of_support tracks mainstream support. Both legacy attributes are deprecated. OS versions now show linked servers, virtual machines and PCs in a single list.]]>
     </version_description>
     <itop_version_min>
-        <![CDATA[3.2.0]]>
+        <![CDATA[3.3.0]]>
     </itop_version_min>
     <status>stable</status>
     <mandatory>false</mandatory>

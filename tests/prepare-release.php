@@ -25,8 +25,8 @@ $tests = [
 ];
 
 $cases = [
-    'reject malformed version' => [$manifest, $module, 'v3.2.3', '2028-02-29'],
-    'reject version with leading zeros' => [$manifest, $module, '03.2.3', '2028-02-29'],
+    'reject malformed version' => [$manifest, $module, 'v' . $next, '2028-02-29'],
+    'reject version with leading zeros' => [$manifest, $module, '0' . $next, '2028-02-29'],
     'reject unchanged version' => [$manifest, $module, $current, '2028-02-29'],
     'reject older version' => [$manifest, $module, '0.0.0', '2028-02-29'],
     'reject invalid calendar date' => [$manifest, $module, $next, '2027-02-29'],
